@@ -1,0 +1,8 @@
+# Arquivos de texto gerados pelo código
+saida.txt
+saida_palavras.txt
+palavras.txt
+
+# Outros arquivos gerados
+__pycache__/
+.idea/
