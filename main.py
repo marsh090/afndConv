@@ -47,34 +47,6 @@ def parse_xml(xml_string):
     return automaton
 
 
-def parse_txt(txt_data):
-    automaton = Automaton()
-
-    # Separa as linhas do texto
-    lines = txt_data.split('\n')
-
-    # Parse do estado inicial
-    initial_state_line = lines[0].split(': ')[1]
-    automaton.initial_state = initial_state_line.strip()
-
-    # Parse dos estados finais
-    final_states_line = lines[1].split(': ')[1]
-    final_states = final_states_line.strip()[1:-1].split(', ')
-    automaton.final_states = set(final_states)
-
-    # Parse das transições
-    for line in lines[2:]:
-        if line:
-            parts = line.split()
-            from_state = parts[2]
-            to_state = parts[4]
-            input_symbol = parts[6]
-            transition = Transition(input_symbol, from_state, to_state)
-            automaton.transitions.append(transition)
-
-    return automaton
-
-
 def load_file(filename):
     try:
         with open(filename, 'r') as file:
@@ -160,7 +132,6 @@ def calculate_epsilon_closure(automaton, state_id):
 def check_words(afd, words_filename, output_filename):
     recognized_words = set()
 
-    # Carregar palavras do arquivo
     try:
         with open(words_filename, 'r') as file:
             words = file.read().splitlines()
@@ -168,7 +139,6 @@ def check_words(afd, words_filename, output_filename):
         print(f"Error: File '{words_filename}' not found.")
         return
 
-    # Verificar se as palavras são reconhecidas pelo AFD
     for word in words:
         current_state = afd.initial_state
         accepted = True
@@ -185,7 +155,6 @@ def check_words(afd, words_filename, output_filename):
         if accepted and current_state in afd.final_states:
             recognized_words.add(word)
 
-    # Escrever resultados no arquivo de saída
     with open(output_filename, 'w') as file:
         for word in words:
             if word in recognized_words:
