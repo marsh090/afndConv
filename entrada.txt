@@ -1,0 +1,12 @@
+Initial state: 0
+Final states: {'1', '2'}
+From state 0 to state 1 with input #
+From state 0 to state 2 with input #
+From state 1 to state 1 with input 1
+From state 1 to state 3 with input 0
+From state 2 to state 2 with input 0
+From state 2 to state 4 with input 1
+From state 3 to state 1 with input 0
+From state 3 to state 3 with input 1
+From state 4 to state 2 with input 1
+From state 4 to state 4 with input 0

@@ -1,0 +1,19 @@
+0: aceito
+1: aceito
+01: não aceito
+11: aceito
+00: aceito
+001: aceito
+101: aceito
+010: aceito
+110: aceito
+1110: não aceito
+1001: aceito
+0010: não aceito
+1110: não aceito
+1111: aceito
+0011: aceito
+1010: aceito
+1011: não aceito
+1100: aceito
+1101: não aceito

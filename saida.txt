@@ -1,0 +1,21 @@
+Initial state: 0,1,2
+Final states: {'1,4', '1,2', '2,3'}
+
+States:
+State 0,1,2: q012
+State 2,3: q23
+State 1,4: q14
+State 1,2: q12
+State 3,4: q34
+
+Transitions:
+From state 0,1,2 to state 2,3 with input 0
+From state 0,1,2 to state 1,4 with input 1
+From state 2,3 to state 1,2 with input 0
+From state 2,3 to state 3,4 with input 1
+From state 1,4 to state 3,4 with input 0
+From state 1,4 to state 1,2 with input 1
+From state 1,2 to state 2,3 with input 0
+From state 1,2 to state 1,4 with input 1
+From state 3,4 to state 1,4 with input 0
+From state 3,4 to state 2,3 with input 1
